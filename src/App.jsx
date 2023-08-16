@@ -2,33 +2,29 @@ import { useState } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
+import ThemeColorContext, {ThemeColorWrapper} from './ThemeContext'
+import ThemeToggler from './components/theme-toggler/ThemeToggler';
+import Main from './components/main/Main';
+import { useContext } from 'react'
+import Nav from './components/nav/Nav'
+import SearchBar from './components/search/Search'
+import Sidebar from './components/side-bar/Sidebar'
 
 function App() {
-  const [count, setCount] = useState(0)
+  const [count, setCount] = useState(0);
+  const color = useContext(ThemeColorContext);
 
   return (
-    <>
-      <div>
-        <a href="https://vitejs.dev" target="_blank" rel="noreferrer">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank" rel="noreferrer">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <ThemeColorWrapper>
+      <div className='app-wrapper'>
+        <Nav></Nav>
+        <div className='main-container'>
+          <SearchBar></SearchBar>
+          <Main></Main>
+        </div>
+        <Sidebar></Sidebar>
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
+    </ThemeColorWrapper>
   )
 }
 

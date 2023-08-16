@@ -1,0 +1,22 @@
+.search-wrapper {
+  height: 300px;
+  display: flex;
+  width: 100%;
+}
+#search {
+  min-width: 400px;
+  height: 56px;
+  border-radius: 8px;
+  padding-left: 20px;
+}
+.search-form {
+  width: 100%;
+  border: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.search-fieldset {
+  border: none;
+  color: #fff;
+}
