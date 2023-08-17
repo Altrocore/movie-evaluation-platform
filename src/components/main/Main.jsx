@@ -1,8 +1,13 @@
 import React, { useState, useEffect } from "react";
 import axios from "axios";
 import { nanoid } from "nanoid";
+<<<<<<< HEAD
 import "./main.css";
 import PropTypes from "prop-types";
+=======
+import PropTypes from "prop-types";
+import "./main.css";
+>>>>>>> 49fc3b2 (Add real-time search)
 
 function Main({ searchedQuery }) {
   const [films, setFilms] = useState([]);

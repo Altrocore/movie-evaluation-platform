@@ -5,11 +5,16 @@
 
 .film-posters {
   display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
+  flex-wrap: wrap; 
+  gap: 20px; 
+}
+
+.film-poster-container {
+  flex: 0 0 calc(33.33% - 20px);
 }
 
 .film-poster {
-  max-width: 200px;
-  margin: 10px;
+  max-width: 100%;
+  height: auto;
+  border: 1px solid #ccc;
 }
