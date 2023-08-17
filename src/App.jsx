@@ -1,6 +1,4 @@
 import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
 import './App.css'
 import ThemeColorContext, {ThemeColorWrapper} from './ThemeContext'
 import ThemeToggler from './components/theme-toggler/ThemeToggler';
@@ -17,6 +15,7 @@ import {
 import AboutUs from './components/about-us/AboutUs'
 
 function App() {
+  const [searchedQuery, setSearchedQuery] = useState("");
   const [count, setCount] = useState(0);
   const color = useContext(ThemeColorContext);
 
@@ -28,8 +27,8 @@ function App() {
           <div className='main-container'>
             
               <Routes>
-                <Route path='/' element={<><SearchBar/>
-                  <Main/></>}>
+                <Route path='/' element={<><SearchBar setSearchedQuery={setSearchedQuery} />
+                  <Main searchedQuery={searchedQuery} /></>}>
                 </Route>
                 <Route path='/about' element={<AboutUs/>}></Route>
               </Routes>

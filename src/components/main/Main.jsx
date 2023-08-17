@@ -1,13 +1,14 @@
 import React, { useState, useEffect } from "react";
+import axios from "axios";
+import { nanoid } from "nanoid";
 import "./main.css";
-import axios from "axios"; // Import Axios
-import { nanoid } from "nanoid"; // Import nanoid
+import PropTypes from "prop-types";
 
-function Main() {
+function Main({ searchedQuery }) {
   const [films, setFilms] = useState([]);
 
   useEffect(() => {
-    async function fetchAndSetFilms() {
+    const fetchFilms = async () => {
       const options = {
         method: "GET",
         url: "https://imdb-top-100-movies1.p.rapidapi.com/",
@@ -19,7 +20,6 @@ function Main() {
 
       try {
         const response = await axios.request(options);
-        // Add nanoid-generated IDs to the films
         const filmsWithIds = response.data.map((film) => ({
           ...film,
           id: nanoid(),
@@ -28,19 +28,23 @@ function Main() {
       } catch (error) {
         console.error("Error fetching films:", error);
       }
-    }
+    };
 
-    fetchAndSetFilms();
+    fetchFilms();
   }, []);
+
+  const filteredFilms = films.filter((film) =>
+    film.title.toLowerCase().includes(searchedQuery.toLowerCase())
+  );
 
   return (
     <main className="main">
       <h1>IMDb Top 100 Movies</h1>
       <div className="film-posters">
-        {films.map((film) => (
+        {filteredFilms.map((film) => (
           <div key={film.id}>
             <img
-              src={film.image[0][1]} // Use the URL from the JSON for the first image
+              src={film.image[0][1]}
               alt={`${film.title} Poster`}
               className="film-poster"
             />
@@ -50,5 +54,9 @@ function Main() {
     </main>
   );
 }
+
+Main.propTypes = {
+  searchedQuery: PropTypes.func.isRequired,
+};
 
 export default Main;
