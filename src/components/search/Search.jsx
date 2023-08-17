@@ -39,7 +39,3 @@ SearchBar.propTypes = {
 };
 
 export default SearchBar;
-<<<<<<< HEAD
-=======
-
->>>>>>> 49fc3b2 (Add real-time search)

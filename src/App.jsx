@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 import { useState } from 'react'
 import './App.css'
 import ThemeColorContext, {ThemeColorWrapper} from './ThemeContext'
@@ -40,31 +39,7 @@ function App() {
       </ThemeColorWrapper>
     </Router>
   )
-=======
-import React, { useState } from "react";
-import "./App.css";
-import ThemeColorContext, { ThemeColorWrapper } from "./ThemeContext";
-import Nav from "./components/nav/Nav";
-import SearchBar from "./components/search/Search";
-import Main from "./components/main/Main";
-import Sidebar from "./components/side-bar/Sidebar";
 
-function App() {
-  const [searchedQuery, setSearchedQuery] = useState("");
-
-  return (
-    <ThemeColorWrapper>
-      <div className="app-wrapper">
-        <Nav />
-        <div className="main-container">
-          <SearchBar setSearchedQuery={setSearchedQuery} />
-          <Main searchedQuery={searchedQuery} />
-        </div>
-        <Sidebar />
-      </div>
-    </ThemeColorWrapper>
-  );
->>>>>>> 49fc3b2 (Add real-time search)
 }
 
 export default App;
