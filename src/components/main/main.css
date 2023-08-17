@@ -2,3 +2,14 @@
   height: 100vh;
   width: 100%;
 }
+
+.film-posters {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.film-poster {
+  max-width: 200px;
+  margin: 10px;
+}
