@@ -49,6 +49,7 @@ function Main({ searchedQuery }) {
               alt={`${film.title} Poster`}
               className="film-poster"
             />
+            <p>{film.rating}</p>
           </div>
         ))}
       </div>
