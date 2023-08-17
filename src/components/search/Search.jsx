@@ -1,6 +1,13 @@
+import { useState } from "react";
 import "./search.css";
 
 function SearchBar() {
+
+  const [inputText, setInputText] = useState('');
+
+  const handleInputChange = (event) => {
+    setInputText(event.target.value);
+  };
 
   return (
     <section className="search-wrapper">
@@ -8,11 +15,11 @@ function SearchBar() {
         <fieldset className="search-fieldset">
           <legend>Discover your favorite movie</legend>
             <label htmlFor="search">
-                <input type="search" name="search" id="search" placeholder="Search for movie or series" maxLength="200" />
+                <input value={inputText} onChange={handleInputChange} type="text" className="search" placeholder="Search for movie or series" maxLength="200" />
             </label>
-            <button type="submit" title="Search this website now">Submit</button>
+            <button type="submit" className="search-btn"></button>
         </fieldset>
-    </form>≈
+      </form>≈
     </section>
   )
 }

@@ -1,13 +1,14 @@
 .search-wrapper {
-  height: 300px;
+  height: 210px;
   display: flex;
   width: 100%;
 }
-#search {
+.search {
   min-width: 400px;
   height: 56px;
   border-radius: 8px;
   padding-left: 20px;
+  font-size: 20px;
 }
 .search-form {
   width: 100%;
@@ -19,4 +20,18 @@
 .search-fieldset {
   border: none;
   color: #fff;
+  position: relative;
+  font-size: 20px;
+}
+.search-btn {
+  position: absolute;
+  background-image: url("../../images/Search.svg");
+  cursor: pointer;
+  background-repeat: no-repeat;
+  background-color: #fff;
+  width: 25px;
+  height: 25px;
+  top: 30px;
+  right: 25px;
+  border: none;
 }

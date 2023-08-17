@@ -9,22 +9,36 @@ import { useContext } from 'react'
 import Nav from './components/nav/Nav'
 import SearchBar from './components/search/Search'
 import Sidebar from './components/side-bar/Sidebar'
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes
+} from 'react-router-dom';
+import AboutUs from './components/about-us/AboutUs'
 
 function App() {
   const [count, setCount] = useState(0);
   const color = useContext(ThemeColorContext);
 
   return (
-    <ThemeColorWrapper>
-      <div className='app-wrapper'>
-        <Nav></Nav>
-        <div className='main-container'>
-          <SearchBar></SearchBar>
-          <Main></Main>
+    <Router>
+      <ThemeColorWrapper>
+        <div className='app-wrapper'>
+          <Nav></Nav>
+          <div className='main-container'>
+            
+              <Routes>
+                <Route path='/' element={<><SearchBar/>
+                  <Main/></>}>
+                </Route>
+                <Route path='/about' element={<AboutUs/>}></Route>
+              </Routes>
+            
+          </div>
+          <Sidebar></Sidebar>
         </div>
-        <Sidebar></Sidebar>
-      </div>
-    </ThemeColorWrapper>
+      </ThemeColorWrapper>
+    </Router>
   )
 }
 

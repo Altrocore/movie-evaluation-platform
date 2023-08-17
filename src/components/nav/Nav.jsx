@@ -1,21 +1,30 @@
 import "./nav.css";
-import Chat from "../../images/chat-msg.png"
-import Notification from "../../images/Notification.png"
-import Settings from "../../images/Settings.png"
+import Chat from "../../images/chat-msg.png";
+import Notification from "../../images/Notification.png";
+import Settings from "../../images/Settings.png";
+import {
+  NavLink,
+} from 'react-router-dom';
 
 function Nav() {
 
   return (
     <nav className="nav">
-      <button>
-        <img className="img" src={Chat} alt="Chat Message" />
-      </button>
-      <button>
-        <img className="img" src={Notification} alt="Chat Message" />
-      </button>
-      <button>
-        <img className="img" src={Settings} alt="Chat Message" />
-      </button>
+      <ul>
+        <li>
+          <NavLink to="/" className={({ isActive }) =>
+            isActive ? "active" : ""}>
+            Home
+          </NavLink>
+        </li>
+        <li>
+          <NavLink to="/about" className={({ isActive }) =>
+            isActive ? "active" : ""}>
+            About us
+          </NavLink>
+        </li>
+      </ul>
+      
     </nav>
   )
 }
