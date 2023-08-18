@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import './App.css'
 import ThemeColorContext, {ThemeColorWrapper} from './ThemeContext'
 import ThemeToggler from './components/theme-toggler/ThemeToggler';
@@ -13,11 +12,11 @@ import {
   Routes
 } from 'react-router-dom';
 import AboutUs from './components/about-us/AboutUs'
+import FilmContext from './FilmContext';
 
 function App() {
-  const [searchedQuery, setSearchedQuery] = useState("");
-  const [count, setCount] = useState(0);
   const color = useContext(ThemeColorContext);
+  const {isLoading} = useContext(FilmContext);
 
   return (
     <Router>
@@ -25,13 +24,13 @@ function App() {
         <div className='app-wrapper'>
           <Nav></Nav>
           <div className='main-container'>
-            
-              <Routes>
-                <Route path='/' element={<><SearchBar setSearchedQuery={setSearchedQuery} />
-                  <Main searchedQuery={searchedQuery} /></>}>
+              { isLoading ? (<div>Loading...</div>) :
+              (<Routes>
+                 <Route path='/' element={<><SearchBar/>
+                  <Main/></>}>
                 </Route>
                 <Route path='/about' element={<AboutUs/>}></Route>
-              </Routes>
+              </Routes>)}
             
           </div>
           <Sidebar></Sidebar>
@@ -39,7 +38,6 @@ function App() {
       </ThemeColorWrapper>
     </Router>
   )
-
 }
 
-export default App;
+export default App
