@@ -13,29 +13,35 @@ import {
 } from 'react-router-dom';
 import AboutUs from './components/about-us/AboutUs'
 import FilmContext from './FilmContext';
+import { PaginationProvider } from './PaginationContext';
 
 function App() {
   const color = useContext(ThemeColorContext);
-  const {isLoading} = useContext(FilmContext);
+  const {isLoading, chosenFilm} = useContext(FilmContext);
 
   return (
     <Router>
-      <ThemeColorWrapper>
-        <div className='app-wrapper'>
-          <Nav></Nav>
-          <div className='main-container'>
-              { isLoading ? (<div>Loading...</div>) :
-              (<Routes>
-                 <Route path='/' element={<><SearchBar/>
-                  <Main/></>}>
-                </Route>
-                <Route path='/about' element={<AboutUs/>}></Route>
-              </Routes>)}
-            
+      <PaginationProvider>
+        <ThemeColorWrapper>
+          <div className='app-wrapper'>
+            <Nav></Nav>
+            <div className='main-container'>
+                { isLoading ? (<div className='loading'>Loading...</div>) :
+                (<Routes>
+                  <Route path='/' element={
+                  <> {chosenFilm ? <Main/> :
+                    <><SearchBar/>
+                    <Main/></>}
+                    </>}>
+                  </Route>
+                  <Route path='/about' element={<AboutUs/>}></Route>
+                </Routes>)}
+              
+            </div>
+            <Sidebar></Sidebar>
           </div>
-          <Sidebar></Sidebar>
-        </div>
-      </ThemeColorWrapper>
+        </ThemeColorWrapper>
+      </PaginationProvider>
     </Router>
   )
 }

@@ -1,6 +1,7 @@
 .main {
-  height: 100vh;
+  height: 100%;
   width: 100%;
+  color: #FFF;
 }
 
 .film-posters {
@@ -17,4 +18,7 @@
   max-width: 100%;
   height: auto;
   border: 1px solid #ccc;
+}
+.capitalize-first-letter::first-letter {
+  text-transform: uppercase;
 }
