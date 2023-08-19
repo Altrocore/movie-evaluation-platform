@@ -26,8 +26,8 @@ function Feedback({film}) {
   const handleClick = () => {
     setClickBtn(!btnClicked);
     setTextareaValue("");
-    console.log(btnClicked)
-  }
+    console.log(btnClicked);
+  };
   
   return (
     <div className="feedback-wrapper">
@@ -54,7 +54,7 @@ function Feedback({film}) {
                   name="" id="" cols="30" rows="10">
                 </textarea>
                 <button >cancel</button>
-                <button onClick={pushFeedback(film._id, film)}>Add Review</button>
+                <button onClick={() => pushFeedback(film._id, film)}>Add Review</button>
               </div> : 
               <div className="rate-container">
                 <div className="rate">
