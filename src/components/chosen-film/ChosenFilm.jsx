@@ -6,11 +6,10 @@ import { useContext } from "react";
 import Feedback from "../feedback/Feedback";
 
 function ChosenFilm({film}) {
-  console.log(film)
+  const rating = parseFloat(film.rating);
   const {setSearchQuery, setChosenFilm} = useContext(FilmContext);
   const handleSearch = () => {
     setSearchQuery("");
-    console.log("zalupa")
     setChosenFilm(null);
   };
   const backgroundStyle = {
@@ -45,7 +44,7 @@ function ChosenFilm({film}) {
       <div className="description-container">
         <p>{film.description}</p>
       </div>
-      <Feedback film={film}></Feedback>
+      <Feedback film={{ ...film, rating: rating}} />
     </div>
   )
 }
