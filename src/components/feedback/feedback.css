@@ -1,0 +1,33 @@
+.feedback-wrapper {
+  display: flex;
+}
+.feedback-list {
+  width: 50%;
+}
+.rate-block-container {
+  width: 50%;
+}
+.add-review-btn {
+  margin: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 240px;
+  background-color: transparent;
+  border: 1px solid transparent;
+  color: #EBC351;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  cursor: pointer;
+}
+.review-img-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 56px;
+  height: 56px;
+  border-radius: 50%;
+  background-color: #FF922F78;
+}

@@ -7,7 +7,7 @@ import PaginationContext from "../../PaginationContext";
 
 function Main() {
   const { filteredFilms, chosenFilm, choseFilm } = useContext(FilmContext);
-  const {startIndex, endIndex} = useContext(PaginationContext);
+  const { startIndex, endIndex } = useContext(PaginationContext);
   const currentData = filteredFilms.slice(startIndex, endIndex);
 
   console.log(filteredFilms)

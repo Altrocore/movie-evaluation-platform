@@ -3,6 +3,7 @@ import Star from "../../images/Star.png";
 import Arrowback from "../../images/Arrowback.svg";
 import FilmContext from "../../FilmContext";
 import { useContext } from "react";
+import Feedback from "../feedback/Feedback";
 
 function ChosenFilm({film}) {
   console.log(film)
@@ -44,6 +45,7 @@ function ChosenFilm({film}) {
       <div className="description-container">
         <p>{film.description}</p>
       </div>
+      <Feedback film={film}></Feedback>
     </div>
   )
 }
