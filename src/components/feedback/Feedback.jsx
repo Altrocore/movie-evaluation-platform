@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import FilmContext from "../../FilmContext";
 import Plus from "../../images/plus-img.svg";
 import "./feedback.css";
+import {nanoid} from "nanoid";
 
 function Feedback({ film }) {
   const [textareaValue, setTextareaValue] = useState("");
@@ -17,6 +18,7 @@ function Feedback({ film }) {
     if (textareaValue) {
       await addFeedback(film._id, textareaValue);
       setTextareaValue("");
+      setClickBtn(false);
     }
   };
 
@@ -30,7 +32,7 @@ function Feedback({ film }) {
       <ul className="feedback-list">
         {film?.feedback?.length > 0 ? (
           film.feedback.map((feedback) => (
-            <li key={feedback._id}>
+            <li key={nanoid()}>
               <p className="feedback-el">{feedback.feedback}</p>
             </li>
           ))
@@ -42,7 +44,7 @@ function Feedback({ film }) {
       <div className="rate-block-wrapper">
         {btnClicked ? (
           <div>
-            <textarea
+            <textarea className="review-textarea"
               value={textareaValue}
               onChange={handleTextareaChange}
               name=""
@@ -50,12 +52,14 @@ function Feedback({ film }) {
               cols="30"
               rows="10"
             ></textarea>
-            <button type="button" onClick={() => setClickBtn(false)}>
-              Cancel
-            </button>
-            <button onClick={pushFeedback} type="button">
-              Add Review
-            </button>
+            <div className="handle-btn-wrapper">
+              <button className="handle-new-review-btn" type="button" onClick={() => setClickBtn(false)}>
+                Cancel
+              </button>
+              <button className="handle-new-review-btn" onClick={pushFeedback} type="button">
+                Add a Review
+              </button>
+            </div>
           </div>
         ) : (
           <div className="rate-container">
@@ -78,7 +82,7 @@ Feedback.propTypes = {
     _id: PropTypes.string.isRequired,
     feedback: PropTypes.arrayOf(
       PropTypes.shape({
-        _id: PropTypes.string.isRequired,
+        
         feedback: PropTypes.string.isRequired
       })
     ).isRequired,

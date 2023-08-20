@@ -3,6 +3,11 @@
 }
 .feedback-list {
   width: 50%;
+  padding-left: 0;
+}
+.feedback-list p {
+  display: flex;
+  justify-content: center;
 }
 .rate-block-container {
   width: 50%;
@@ -30,4 +35,26 @@
   height: 56px;
   border-radius: 50%;
   background-color: #FF922F78;
+}
+.handle-new-review-btn {
+  border-radius: 8px;
+  height: 36px;
+  padding: 8px;
+  text-align: center;
+  background-color: #FF922F78;
+  color: #FFF;
+  border: 1px solid transparent;
+}
+.handle-btn-wrapper {
+  display: flex;
+  justify-content: space-around;
+}
+.review-textarea {
+  border-radius: 8px;
+  border: 1px solid transparent;
+  opacity: 0.8;
+  background-color: #FF922F78;
+  color: #FFF;
+  font-size: 14px;
+  padding: 8px;
 }

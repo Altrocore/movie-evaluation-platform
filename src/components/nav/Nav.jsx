@@ -1,7 +1,4 @@
 import "./nav.css";
-import Chat from "../../images/chat-msg.png";
-import Notification from "../../images/Notification.png";
-import Settings from "../../images/Settings.png";
 import {
   NavLink,
 } from 'react-router-dom';
