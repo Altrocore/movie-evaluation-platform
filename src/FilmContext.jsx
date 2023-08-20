@@ -18,29 +18,31 @@ export const FilmContextWrapper = ({ children }) => {
   const fetchFilms = async () => {
     try {
       const response = await axios.get(`${API_BASE_URL}/films`);
-      const filmsWithIds = response.data.map((film) => ({
-        ...film,
-        feedback: []
-      }));
+      const filmsWithIds = response.data;
       setFilms(filmsWithIds);
+      console.log(filmsWithIds)
       setIsLoading(false);
     } catch (error) {
       console.error("Error fetching films:", error);
     }
   };
 
-  const addFeedback = async (filmId, newFeedback) => {
+  const addFeedback = async (filmId, newFeedback, id) => {
     try {
-      const response = await axios.post(
-        `${API_BASE_URL}/feedbacks`,
-        { filmId: filmId, feedback: newFeedback }
-      );
-  
+      const film = films.find(film => film._id === filmId);
+
       const updatedFilms = films.map((film) =>
         film._id === filmId
-          ? { ...film, feedback: [...film.feedback, response.data] }
+          ? { ...film, feedback: [...film.feedback, newFeedback] }
           : film
       );
+
+      console.log(updatedFilms)
+      const response = await axios.put(
+        `${API_BASE_URL}/films/${id}`,
+        {...film, feedback: [...film.feedback, newFeedback]}
+      );
+        console.log(response.data)
       setFilms(updatedFilms);
   
       if (chosenFilm && chosenFilm._id === filmId) {

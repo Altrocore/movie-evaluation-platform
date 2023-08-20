@@ -4,7 +4,7 @@ import PaginationContext from "../../PaginationContext";
 const Pagination = () => {
   const { currentPage, totalPages, nextPage, prevPage } = useContext(PaginationContext);
   const pagesArr = Array.from({ totalPages });
-  console.log(currentPage, totalPages, pagesArr)
+
   return (
     <div>
       <ul>

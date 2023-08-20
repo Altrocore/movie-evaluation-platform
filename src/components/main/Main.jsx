@@ -10,7 +10,6 @@ function Main() {
   const { startIndex, endIndex } = useContext(PaginationContext);
   const currentData = filteredFilms.slice(startIndex, endIndex);
 
-  console.log(filteredFilms)
   const addFeedback = (film) => {
     if (!film.feedback) {
       film.feedback = []

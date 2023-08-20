@@ -58,3 +58,8 @@
   font-size: 14px;
   padding: 8px;
 }
+.rate-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}

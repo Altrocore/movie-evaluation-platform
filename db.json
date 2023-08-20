@@ -34,7 +34,14 @@
         "Stephen King(based on the short novel \"Rita Hayworth and the Shawshank Redemption\" by)",
         "Frank Darabont(screenplay by)"
       ],
-      "year": 1994
+      "year": 1994,
+      "feedback": [
+        "asdasdasd",
+        "asdasdasd",
+        "asdasdasdasd",
+        "asdasd asdas d",
+        "asdasd asd asd"
+      ]
     },
     {
       "_id": "63eef9c4244a27600bb64824",
@@ -71,7 +78,13 @@
         "Mario Puzo(screenplay by)",
         "Francis Ford Coppola(screenplay by)"
       ],
-      "year": 1972
+      "year": 1972,
+      "feedback": [
+        "asdasdasd",
+        "asd asda sdas d",
+        "asdasdasd",
+        "asd asd asd asd d ada"
+      ]
     },
     {
       "_id": "63eef9c6244a27600bb64828",
@@ -3703,128 +3716,6 @@
         "Egon Jacobsohn(article)"
       ],
       "year": 1931
-    }
-  ],
-  "feedbacks": [
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "qefwfw",
-      "id": 1
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "qqfwf",
-      "id": 2
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "qrqrq",
-      "id": 3
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "wwefwfew",
-      "id": 4
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "New comment",
-      "id": 5
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "rwrfwgr",
-      "id": 6
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "оувгоцаг",
-      "id": 7
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "огваыг",
-      "id": 8
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "susnfs",
-      "id": 9
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "susj",
-      "id": 10
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "qdqdq",
-      "id": 11
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "dfsgfev",
-      "id": 12
-    },
-    {
-      "filmId": "63eef9c2244a27600bb64820",
-      "feedback": "weffea",
-      "id": 13
-    },
-    {
-      "filmId": "63eef9c6244a27600bb64828",
-      "feedback": "asdasdasd",
-      "id": 14
-    },
-    {
-      "filmId": "63eef9c6244a27600bb64828",
-      "feedback": "asdasdasd",
-      "id": 15
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdasd",
-      "id": 16
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdasd",
-      "id": 17
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdasdas",
-      "id": 18
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdasd",
-      "id": 19
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdas das das d",
-      "id": 20
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdasd",
-      "id": 21
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdds",
-      "id": 22
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdas",
-      "id": 23
-    },
-    {
-      "filmId": "63eef9c4244a27600bb64824",
-      "feedback": "asdasdasd",
-      "id": 24
     }
   ]
 }

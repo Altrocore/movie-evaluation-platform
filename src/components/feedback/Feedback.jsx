@@ -4,6 +4,7 @@ import FilmContext from "../../FilmContext";
 import Plus from "../../images/plus-img.svg";
 import "./feedback.css";
 import {nanoid} from "nanoid";
+import { useEffect } from "react";
 
 function Feedback({ film }) {
   const [textareaValue, setTextareaValue] = useState("");
@@ -13,10 +14,10 @@ function Feedback({ film }) {
   const handleTextareaChange = (event) => {
     setTextareaValue(event.target.value);
   };
-
+  
   const pushFeedback = async () => {
     if (textareaValue) {
-      await addFeedback(film._id, textareaValue);
+      await addFeedback(film._id, textareaValue, film.id);
       setTextareaValue("");
       setClickBtn(false);
     }
@@ -31,9 +32,9 @@ function Feedback({ film }) {
     <div className="feedback-wrapper">
       <ul className="feedback-list">
         {film?.feedback?.length > 0 ? (
-          film.feedback.map((feedback) => (
+          film.feedback.map((el) => (
             <li key={nanoid()}>
-              <p className="feedback-el">{feedback.feedback}</p>
+              <p className="feedback-el">{el}</p>
             </li>
           ))
         ) : (
@@ -77,17 +78,16 @@ function Feedback({ film }) {
   );
 }
 
-Feedback.propTypes = {
-  film: PropTypes.shape({
-    _id: PropTypes.string.isRequired,
-    feedback: PropTypes.arrayOf(
-      PropTypes.shape({
-        
-        feedback: PropTypes.string.isRequired
-      })
-    ).isRequired,
-    rating: PropTypes.number.isRequired
-  }).isRequired
-};
+// Feedback.propTypes = {
+//   film: PropTypes.shape({
+//     _id: PropTypes.string.isRequired,
+//     feedback: PropTypes.arrayOf(
+//       PropTypes.shape({
+//         feedback: PropTypes.string.isRequired
+//       })
+//     ).isRequired,
+//     rating: PropTypes.number.isRequired
+//   }).isRequired
+// };
 
 export default Feedback;
