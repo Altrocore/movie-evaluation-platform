@@ -1,10 +1,19 @@
 import { defineConfig } from 'vite';
-import reactRefresh from '@vitejs/plugin-react-refresh';
+import react from '@vitejs/plugin-react';
 
 export default defineConfig({
-  plugins: [reactRefresh()],
-  root: "./src",
-  define: {
-    'process.env': {},
+  plugins: [react()],
+  resolve: {
+    alias: {
+      '@tests': './tests'
+    }
   },
+  optimizeDeps: {
+    include: [
+      'react',
+      'react-dom',
+      '@testing-library/react',
+      '@testing-library/jest-dom',
+    ]
+  }
 });
