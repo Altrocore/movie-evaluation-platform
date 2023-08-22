@@ -3,10 +3,10 @@ import react from '@vitejs/plugin-react';
 
 export default defineConfig({
   plugins: [react()],
-  resolve: {
-    alias: {
-      '@tests': './tests'
-    }
+  test: {
+    globals: true,
+    environment: 'happy-dom',
+    setupFiles: './tests/setup.js',
   },
   optimizeDeps: {
     include: [
