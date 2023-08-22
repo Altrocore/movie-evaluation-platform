@@ -18,9 +18,6 @@ function Sidebar() {
           <li>
             <a href="https://www.primevideo.com/">Amazon Prime</a>
           </li>
-          <li>
-            <a href="https://www.netflix.com/ca/">Netflix</a>
-          </li>
         </ul>
         <ul className="links-list">
           <li>Action</li>
@@ -28,7 +25,6 @@ function Sidebar() {
           <li>Drama</li>
           <li>Sci-fi</li>
           <li>Thriller</li>
-          <li>Drama</li>
         </ul>
     </div>
   )
