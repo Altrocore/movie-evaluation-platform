@@ -15,6 +15,7 @@ function ChosenFilm({film}) {
   const backgroundStyle = {
     backgroundImage: `url(${film.image[2][1]})`,
   };
+  
   const creators = film.director.map(el => `${el}`);
   const genres = film.genre.map(el => ` ${el}`).join(" ,");
   const writers = film.writers.map(el => ` ${el}`).join(" ,");
